@@ -1,0 +1,9 @@
+
+[compile]
+toolkit @local @snapshot
+commons-lang3 org.apache.commons 3.7
+javacc net.java.dev.javacc 7.0.3
+
+[test]
+junit junit 4.7
+

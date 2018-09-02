@@ -1,0 +1,52 @@
+options {
+	STATIC = false;
+} 
+
+PARSER_BEGIN(Parser)
+
+package com.eriklievaart.blog.parser.javacc;
+
+import com.eriklievaart.blog.parser.node.ParserStack;
+import com.eriklievaart.blog.parser.node.AstNode;
+
+public class Parser {
+	private ParserStack stack = new ParserStack();  
+}
+
+PARSER_END(Parser)
+
+SKIP : { " " | "\t" }
+
+
+TOKEN : {
+	<NL: "\r" | "\n" | "\r\n">
+	|	
+	<TEXT: ("@@" | ~["@", "\r", "\n"])+> {matchedToken.image = matchedToken.image.replace("@@", "@"); }
+	|
+	<ANNOTATION_OPEN: "@" (["a" - "z", "0" - "9"])+ ("(" (~["(", ")"])* ")")? ("{")?>
+	|
+	<ANNOTATION_CLOSE: "@" (["a" - "z", "0" - "9"])+ "}">
+	|
+	<UNKNOWN: ~[]>
+}
+
+
+ 
+AstNode parseFile() : 
+	{
+		Token t;
+	}
+	{
+		(
+			t=<TEXT> { stack.addText(t); }
+		| 
+			t=<ANNOTATION_OPEN> { stack.openAnnotation(t); }
+		| 
+			t=<ANNOTATION_CLOSE> { stack.closeMLA(t); }
+		|
+			t=<NL> { stack.addNL(t); }
+		 )*
+		<EOF> { return stack.popRoot(); }
+	}
+	
+	
