@@ -65,5 +65,4 @@ public class ParserStack {
 		}
 		stack.peek().addChild(new AstNode(token));
 	}
-
 }

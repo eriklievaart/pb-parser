@@ -55,5 +55,4 @@ public class AnnotationNodeWrapper {
 	public String toString() {
 		return ToString.simple(this, "$[@$]", name);
 	}
-
 }

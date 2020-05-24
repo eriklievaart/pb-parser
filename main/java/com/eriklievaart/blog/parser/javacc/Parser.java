@@ -238,5 +238,4 @@ stack.addNL(t);
   /** Disable tracing. */
   public final void disable_tracing() {
   }
-
 }

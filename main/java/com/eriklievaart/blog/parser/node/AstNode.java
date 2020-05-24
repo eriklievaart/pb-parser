@@ -126,5 +126,4 @@ public class AstNode {
 		}
 		return Str.sub("$[$:$]", ParserConstants.tokenImage[token.kind], token.beginLine, token.image);
 	}
-
 }

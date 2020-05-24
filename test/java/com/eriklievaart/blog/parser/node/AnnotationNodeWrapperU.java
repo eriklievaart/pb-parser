@@ -60,5 +60,4 @@ public class AnnotationNodeWrapperU {
 		}
 		CheckStr.isEqual(found, expected);
 	}
-
 }
