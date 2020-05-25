@@ -4,6 +4,7 @@ import java.io.StringReader;
 
 import org.junit.Test;
 
+import com.eriklievaart.blog.parser.api.Parser;
 import com.eriklievaart.blog.parser.node.AstNode;
 import com.eriklievaart.toolkit.lang.api.check.CheckStr;
 

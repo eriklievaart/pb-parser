@@ -6,8 +6,8 @@ import java.util.List;
 
 import org.apache.commons.lang3.ArrayUtils;
 
-import com.eriklievaart.blog.parser.javacc.ParserConstants;
-import com.eriklievaart.blog.parser.javacc.Token;
+import com.eriklievaart.blog.parser.api.ParserConstants;
+import com.eriklievaart.blog.parser.api.Token;
 import com.eriklievaart.toolkit.lang.api.FormattedException;
 import com.eriklievaart.toolkit.lang.api.check.Check;
 import com.eriklievaart.toolkit.lang.api.str.Str;

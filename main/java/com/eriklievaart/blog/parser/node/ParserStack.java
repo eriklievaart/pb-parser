@@ -2,8 +2,8 @@ package com.eriklievaart.blog.parser.node;
 
 import java.util.Stack;
 
-import com.eriklievaart.blog.parser.javacc.ParserConstants;
-import com.eriklievaart.blog.parser.javacc.Token;
+import com.eriklievaart.blog.parser.api.ParserConstants;
+import com.eriklievaart.blog.parser.api.Token;
 import com.eriklievaart.toolkit.lang.api.FormattedException;
 import com.eriklievaart.toolkit.lang.api.check.Check;
 
